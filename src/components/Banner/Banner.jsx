@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import NetflixBannerLogo from "../../assets/image/logo.png";
 import { Play, Info } from "lucide-react";
 import styles from "./Banner.module.css";
-import { movieInstance } from "../../Utility/MovieInstance";
+ import {movieInstance} from "../../Utility/MovieInstance";
 import requests from "../../Utility/requestUrls";
 
 const BANNER_BASE = "https://image.tmdb.org/t/p/original/";
@@ -14,15 +14,12 @@ function Banner() {
     async function fetchBannerImage() {
       try {
         const request = await movieInstance.get(requests.fetchNetflixOriginals);
-        // https://api.themoviedb.org/3/discover/tv?api_key=e74814d088f742f3fc4b093962a29dd0
 
-        console.log(request);
         setBannerImage(
-          request.data[
-            Math.floor(Math.random() * request?.data?.length)
+          request.data.results[
+            Math.floor(Math.random() * request.data.results.length)
           ],
         );
-        // console.log(bannerImage);
       } catch (error) {
         console.log(error);
       }
@@ -31,9 +28,9 @@ function Banner() {
     fetchBannerImage();
   }, []);
 
-  function truncate(str, n) {
-    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
-  }
+function truncate(str, n) {
+  return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+}
   return (
     <div
       className={styles.banner}
