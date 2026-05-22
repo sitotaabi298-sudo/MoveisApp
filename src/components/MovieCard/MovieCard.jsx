@@ -1,4 +1,4 @@
-import styles from "./MovieCard.module.css";
+import styles from './Moviecard.module.css';
 import { FaCirclePlay } from "react-icons/fa6";
 import { BsPlusCircle } from "react-icons/bs";
 import { GoCheckCircleFill } from "react-icons/go";
@@ -29,6 +29,7 @@ function MovieCard({ movie }) {
 
         <div>badge</div>
 
+        
         {/* badge */}
         <div className={styles.badge}>Recently added</div>
 
@@ -82,3 +83,4 @@ function MovieCard({ movie }) {
 }
 
 export default MovieCard;
+
