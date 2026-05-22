@@ -25,7 +25,7 @@ function Header() {
 
 
   return (
-    <header className={`${styles.header}${isScrolled ? styles.scrolled : ""}`}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
         {/* logo */}
         <img className={styles.logo} src={logo} alt="logo-img" />
@@ -95,7 +95,7 @@ function Header() {
             </button>
 
             {/* dropdoem icon */}
-          
+
             {isProfileOpen && (
               <div className={styles.profileMenu}>
                 <Link className={styles.profileMenuItem}>Account</Link>
