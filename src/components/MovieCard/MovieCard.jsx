@@ -29,7 +29,6 @@ function MovieCard({ movie }) {
 
         <div>badge</div>
 
-        
         {/* badge */}
         <div className={styles.badge}>Recently added</div>
 
@@ -83,4 +82,3 @@ function MovieCard({ movie }) {
 }
 
 export default MovieCard;
-
